@@ -2,6 +2,7 @@
     --font: "Poppins", sans-serif;
 }
 
+/* Reset and base styles */
 * {
     box-sizing: border-box;
 }
@@ -14,10 +15,19 @@ html, body {
     font-family: var(--font);
 }
 
+/* Layout containers */
 .container {
     color: black;
+    box-shadow: inset 0 -4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;      
+    background-color: #e8e8e8;
+    height: 100vh;
 }
 
+/* Header */
 .header {
     background-color: #ffffff;
     text-align: center;
@@ -46,24 +56,15 @@ html, body {
     height: 30px;
 }
 
-.container {
-    box-shadow: inset 0 -4px 10px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;      
-    background-color: #e8e8e8;
-    height: 100vh;
-}
-
+/* Overlay and popup */
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* darken effect */
-    backdrop-filter: blur(5px);      /* blur effect */
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease;
@@ -97,6 +98,7 @@ html, body {
     width: clamp(300px, 90vw, 500px);
 }
 
+/* Form styles */
 .form-popup input {
     width: 100%;
     padding: 10px;
@@ -126,6 +128,7 @@ h3 {
     width: 20px;
 }
 
+/* Buttons */
 .add-book-btn,
 .delete-btn,
 .submit-book,
@@ -189,6 +192,7 @@ h3 {
     transform: translateY(0);
 }
 
+/* Book display */
 .book-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -208,10 +212,6 @@ h3 {
     justify-content: space-between;
 }
 
-#static {
-    font-weight: bold;
-}
-
 .book-card {
     background-color: white;
     border-radius: 10px;
@@ -228,4 +228,9 @@ h3 {
 .book-card-hidden {
     visibility: hidden;
     position: absolute;
+}
+
+/* Utility */
+#static {
+    font-weight: bold;
 }
