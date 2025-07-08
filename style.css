@@ -21,10 +21,12 @@ html, body {
 }
 
 .form-popup {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+    pointer-events: none;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,14 +36,14 @@ html, body {
     background-color: #ffffff;
     border: 1px solid #ccc;
     border-radius: 5px;
-    visibility: hidden;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, visibility 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .open-popup {
-    visibility: visible;
+    opacity: 1;
     transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
 }
 
 .book-wrapper {

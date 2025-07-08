@@ -1,5 +1,7 @@
+// Library
 const myLibrary = [];
 
+// This is a constructor function to create a new book object
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
@@ -8,12 +10,10 @@ function Book(title, author, pages, read) {
     this.ID = self.crypto.randomUUID() 
 }
 
+// This function adds a new book to the library array
 function addBookToLibrary(newBook) {
     myLibrary.push(newBook);
 }
-
-// let mockingbird = new Book("To kill a mockingbird", "Harper Lee", 356, "not read");
-// let harryPotter = new Book("Harry Potter", "J.K. Rowling", 654, "read");
 
 // Query selectors
 const popUpForm = document.querySelector(".form-popup");
@@ -21,28 +21,31 @@ const popUpButton = document.querySelector(".add-book-btn");
 const closeButton = document.querySelector(".close-btn");
 const submitBook = document.querySelector(".submit-book")
 
-// BUTTON -> Add Book
+// Function to open the popup form
+function openPopup() {
+    popUpForm.classList.add("open-popup");
+}
+
+// Function to close the popup form
+function closePopup() {
+    popUpForm.classList.remove("open-popup");
+}
+
+// BUTTON "Add Book" -> Open/Close popup
 popUpButton.addEventListener("click", () => {
-    
     if (!popUpForm.classList.contains("open-popup"))
-        popUpForm.classList.add("open-popup");
+        openPopup();
     else {
-        popUpForm.classList.remove("open-popup");
+        closePopup();
     }
-
-    // if (popUpForm.style.visibility === "visible")
-    //     popUpForm.style.visibility = "hidden";
-    // else {
-    //     popUpForm.style.visibility = "visible";
-    // }
 });
 
-// BUTTON -> Close
+// BUTTON "Close" -> Close popup
 closeButton.addEventListener("click", () => {
-    popUpForm.style.visibility = "hidden";
+    closePopup();
 });
 
-// BUTTON -> Add Book to table
+// BUTTON "Submit" -> add book to library
 submitBook.addEventListener("click", (e) => {
     // Prevent submit
     e.preventDefault();
@@ -58,7 +61,5 @@ submitBook.addEventListener("click", (e) => {
     } else {
         const formData = new Book(title, author, pages, read);
         addBookToLibrary(formData);
-    
-        console.log(myLibrary);
     }   
 });
