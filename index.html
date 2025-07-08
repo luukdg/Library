@@ -4,46 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
     <title>Book Library</title>
 </head>
 <body>
     <div class="header">
         <h1>Book Library</h1>
+        <div>
+            <p>Keep track of your books</p>
+            <object class="svg-emoji" data="svg/care-emoji-with-book.svg"></object>
+        </div>
     </div>
 
     <div class="container">
         <button type="button" class="add-book-btn">Add Book</button>
 
         <div class="book-wrapper">
-            <div class="book-card">
-                <h2>Lord of the Rings - The Fellowship of the Ring</h2>
-                <p>J.R.R Tolkien</p>
-                <p>Pages: 423</p>
-                <p>Status: Read</p>
+            <div class="book-card-hidden" id="book1">
+                <div>
+                    <h2 id="book-title">Lord of the Rings - The Fellowship of the Ring</h2>
+                </div>
+                <div>
+                    <p id="static">Author:</p>
+                    <p id="book-author">J.R.R Tolkien</p>
+                </div>
+                <div>
+                    <p id="static">Pages:</p>
+                    <p id="book-pages">Pages: 423</p>
+                </div>
+                <div>
+                    <p id="static">Status:</p>
+                    <p id="book-read">Read</p>
+                </div>
                 <button class="delete-btn">Delete</button>
             </div>
-            <div class="book-card">
-                <h2>Harry Potter and the Philosopher's Stone</h2>
-                <p>J.K. Rowling</p>
-                <p>Pages: 223</p>
-                <p>Status: Not Read</p>
-                <button class="delete-btn">Delete</button>
-            </div>
-            <div class="book-card">
-                <h2>1984</h2>
-                <p>George Orwell</p>
-                <p>Pages: 328</p>
-                <p>Status: Read</p>
-                <button class="delete-btn">Delete</button>
         </div>
-        
+
+        <div class="overlay" id="overlay"></div>
+
         <form class="form-popup">
             <h3>Add new book</h1>
             <input type="text" name="title" placeholder="Title" id="title" required>
             <input type="text" name="author" placeholder="Author" id="author" required>
             <input type="number" name="pages" placeholder="Pages" id="pages" required>
-            <div>
+            <div id="checkbox-container">
                 <label for="read">Have you read it?</label>
                 <input type="checkbox" name="read" id="read" value="true" required>
             </div>
