@@ -1,4 +1,4 @@
-// Library
+// Book library
 const myLibrary = [
     {
         title: "Lord of the Rings - The Fellowship of the Ring",
@@ -9,13 +9,14 @@ const myLibrary = [
     }
 ];
 
-// This is a constructor function to create a new book object
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.ID = self.crypto.randomUUID() 
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        this.ID = self.crypto.randomUUID();
+    }
 }
 
 // This function adds a new book to the library array
